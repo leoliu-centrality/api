@@ -24,7 +24,7 @@
 
 *Inherited from [Json](_rpc_json_.json.md).[constructor](_rpc_json_.json.md#constructor)*
 
-*Defined in [rpc/Json.ts:16](https://github.com/polkadot-js/api/blob/3057747/packages/types/src/rpc/Json.ts#L16)*
+*Defined in [rpc/Json.ts:16](https://github.com/polkadot-js/api/blob/847d5d1/packages/types/src/rpc/Json.ts#L16)*
 
 **Parameters:**
 
@@ -71,7 +71,7 @@ ___
 
 *Inherited from [Json](_rpc_json_.json.md).[encodedLength](_rpc_json_.json.md#encodedlength)*
 
-*Defined in [rpc/Json.ts:28](https://github.com/polkadot-js/api/blob/3057747/packages/types/src/rpc/Json.ts#L28)*
+*Defined in [rpc/Json.ts:28](https://github.com/polkadot-js/api/blob/847d5d1/packages/types/src/rpc/Json.ts#L28)*
 
 *__description__*: Always 0, never encodes as a Uint8Array
 
@@ -86,7 +86,7 @@ ___
 
 *Inherited from [Json](_rpc_json_.json.md).[isEmpty](_rpc_json_.json.md#isempty)*
 
-*Defined in [rpc/Json.ts:35](https://github.com/polkadot-js/api/blob/3057747/packages/types/src/rpc/Json.ts#L35)*
+*Defined in [rpc/Json.ts:35](https://github.com/polkadot-js/api/blob/847d5d1/packages/types/src/rpc/Json.ts#L35)*
 
 *__description__*: Checks if the value is an empty value
 
@@ -168,7 +168,7 @@ ___
 
 *Inherited from [Json](_rpc_json_.json.md).[eq](_rpc_json_.json.md#eq)*
 
-*Defined in [rpc/Json.ts:42](https://github.com/polkadot-js/api/blob/3057747/packages/types/src/rpc/Json.ts#L42)*
+*Defined in [rpc/Json.ts:42](https://github.com/polkadot-js/api/blob/847d5d1/packages/types/src/rpc/Json.ts#L42)*
 
 *__description__*: Compares the value of the input to see if there is a match
 
@@ -284,7 +284,7 @@ ___
 
 *Inherited from [Json](_rpc_json_.json.md).[toHex](_rpc_json_.json.md#tohex)*
 
-*Defined in [rpc/Json.ts:49](https://github.com/polkadot-js/api/blob/3057747/packages/types/src/rpc/Json.ts#L49)*
+*Defined in [rpc/Json.ts:49](https://github.com/polkadot-js/api/blob/847d5d1/packages/types/src/rpc/Json.ts#L49)*
 
 *__description__*: Unimplemented, will throw
 
@@ -301,7 +301,7 @@ ___
 
 *Inherited from [Json](_rpc_json_.json.md).[toJSON](_rpc_json_.json.md#tojson)*
 
-*Defined in [rpc/Json.ts:56](https://github.com/polkadot-js/api/blob/3057747/packages/types/src/rpc/Json.ts#L56)*
+*Defined in [rpc/Json.ts:56](https://github.com/polkadot-js/api/blob/847d5d1/packages/types/src/rpc/Json.ts#L56)*
 
 *__description__*: Converts the Object to JSON, typically used for RPC transfers
 
@@ -318,7 +318,7 @@ ___
 
 *Inherited from [Json](_rpc_json_.json.md).[toString](_rpc_json_.json.md#tostring)*
 
-*Defined in [rpc/Json.ts:67](https://github.com/polkadot-js/api/blob/3057747/packages/types/src/rpc/Json.ts#L67)*
+*Defined in [rpc/Json.ts:67](https://github.com/polkadot-js/api/blob/847d5d1/packages/types/src/rpc/Json.ts#L67)*
 
 *__description__*: Returns the string representation of the value
 
@@ -335,7 +335,7 @@ ___
 
 *Inherited from [Json](_rpc_json_.json.md).[toU8a](_rpc_json_.json.md#tou8a)*
 
-*Defined in [rpc/Json.ts:74](https://github.com/polkadot-js/api/blob/3057747/packages/types/src/rpc/Json.ts#L74)*
+*Defined in [rpc/Json.ts:74](https://github.com/polkadot-js/api/blob/847d5d1/packages/types/src/rpc/Json.ts#L74)*
 
 *__description__*: Unimplemented, will throw
 
