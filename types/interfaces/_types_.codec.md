@@ -200,7 +200,7 @@
 
 **● encodedLength**: *`number`*
 
-*Defined in [types.ts:38](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L38)*
+*Defined in [types.ts:38](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L38)*
 
 *__description__*: The length of the value when encoded as a Uint8Array
 
@@ -211,7 +211,7 @@ ___
 
 **● isEmpty**: *`boolean`*
 
-*Defined in [types.ts:43](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L43)*
+*Defined in [types.ts:43](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L43)*
 
 *__description__*: Checks if the value is an empty value
 
@@ -225,7 +225,7 @@ ___
 
 ▸ **eq**(other?: *`any`*): `boolean`
 
-*Defined in [types.ts:48](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L48)*
+*Defined in [types.ts:48](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L48)*
 
 *__description__*: Compares the value of the input to see if there is a match
 
@@ -244,7 +244,7 @@ ___
 
 ▸ **toHex**(): `string`
 
-*Defined in [types.ts:53](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L53)*
+*Defined in [types.ts:53](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L53)*
 
 *__description__*: Returns a hex string representation of the value
 
@@ -257,7 +257,7 @@ ___
 
 ▸ **toJSON**(): `any`
 
-*Defined in [types.ts:58](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L58)*
+*Defined in [types.ts:58](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L58)*
 
 *__description__*: Converts the Object to JSON, typically used for RPC transfers
 
@@ -270,7 +270,7 @@ ___
 
 ▸ **toString**(): `string`
 
-*Defined in [types.ts:63](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L63)*
+*Defined in [types.ts:63](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L63)*
 
 *__description__*: Returns the string representation of the value
 
@@ -283,7 +283,7 @@ ___
 
 ▸ **toU8a**(isBare?: *`undefined` \| `false` \| `true`*): `Uint8Array`
 
-*Defined in [types.ts:69](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L69)*
+*Defined in [types.ts:69](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L69)*
 
 *__description__*: Encodes the value as a Uint8Array as per the parity-codec specifications
 

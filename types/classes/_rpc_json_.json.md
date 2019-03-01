@@ -26,7 +26,7 @@
 
 ⊕ **new Json**(value?: *`object` \| `null`*): [Json](_rpc_json_.json.md)
 
-*Defined in [rpc/Json.ts:16](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/rpc/Json.ts#L16)*
+*Defined in [rpc/Json.ts:16](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/rpc/Json.ts#L16)*
 
 **Parameters:**
 
@@ -58,7 +58,7 @@ ___
 
 **get encodedLength**(): `number`
 
-*Defined in [rpc/Json.ts:28](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/rpc/Json.ts#L28)*
+*Defined in [rpc/Json.ts:28](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/rpc/Json.ts#L28)*
 
 *__description__*: Always 0, never encodes as a Uint8Array
 
@@ -71,7 +71,7 @@ ___
 
 **get isEmpty**(): `boolean`
 
-*Defined in [rpc/Json.ts:35](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/rpc/Json.ts#L35)*
+*Defined in [rpc/Json.ts:35](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/rpc/Json.ts#L35)*
 
 *__description__*: Checks if the value is an empty value
 
@@ -89,7 +89,7 @@ ___
 
 *Implementation of [Codec](../interfaces/_types_.codec.md).[eq](../interfaces/_types_.codec.md#eq)*
 
-*Defined in [rpc/Json.ts:42](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/rpc/Json.ts#L42)*
+*Defined in [rpc/Json.ts:42](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/rpc/Json.ts#L42)*
 
 *__description__*: Compares the value of the input to see if there is a match
 
@@ -110,7 +110,7 @@ ___
 
 *Implementation of [Codec](../interfaces/_types_.codec.md).[toHex](../interfaces/_types_.codec.md#tohex)*
 
-*Defined in [rpc/Json.ts:49](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/rpc/Json.ts#L49)*
+*Defined in [rpc/Json.ts:49](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/rpc/Json.ts#L49)*
 
 *__description__*: Unimplemented, will throw
 
@@ -125,7 +125,7 @@ ___
 
 *Implementation of [Codec](../interfaces/_types_.codec.md).[toJSON](../interfaces/_types_.codec.md#tojson)*
 
-*Defined in [rpc/Json.ts:56](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/rpc/Json.ts#L56)*
+*Defined in [rpc/Json.ts:56](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/rpc/Json.ts#L56)*
 
 *__description__*: Converts the Object to JSON, typically used for RPC transfers
 
@@ -140,7 +140,7 @@ ___
 
 *Implementation of [Codec](../interfaces/_types_.codec.md).[toString](../interfaces/_types_.codec.md#tostring)*
 
-*Defined in [rpc/Json.ts:67](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/rpc/Json.ts#L67)*
+*Defined in [rpc/Json.ts:67](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/rpc/Json.ts#L67)*
 
 *__description__*: Returns the string representation of the value
 
@@ -155,7 +155,7 @@ ___
 
 *Implementation of [Codec](../interfaces/_types_.codec.md).[toU8a](../interfaces/_types_.codec.md#tou8a)*
 
-*Defined in [rpc/Json.ts:74](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/rpc/Json.ts#L74)*
+*Defined in [rpc/Json.ts:74](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/rpc/Json.ts#L74)*
 
 *__description__*: Unimplemented, will throw
 

@@ -16,7 +16,7 @@
 
 *Inherited from [Codec](_types_.codec.md).[encodedLength](_types_.codec.md#encodedlength)*
 
-*Defined in [types.ts:38](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L38)*
+*Defined in [types.ts:38](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L38)*
 
 *__description__*: The length of the value when encoded as a Uint8Array
 
@@ -27,7 +27,7 @@ ___
 
 **● hash**: *[IHash](_types_.ihash.md)*
 
-*Defined in [types.ts:107](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L107)*
+*Defined in [types.ts:107](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L107)*
 
 ___
 <a id="isempty"></a>
@@ -38,7 +38,7 @@ ___
 
 *Inherited from [Codec](_types_.codec.md).[isEmpty](_types_.codec.md#isempty)*
 
-*Defined in [types.ts:43](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L43)*
+*Defined in [types.ts:43](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L43)*
 
 *__description__*: Checks if the value is an empty value
 
@@ -49,7 +49,7 @@ ___
 
 **● isSigned**: *`boolean`*
 
-*Defined in [types.ts:108](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L108)*
+*Defined in [types.ts:108](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L108)*
 
 ___
 <a id="method"></a>
@@ -58,7 +58,7 @@ ___
 
 **● method**: *[Method](../classes/_primitive_method_.method.md)*
 
-*Defined in [types.ts:109](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L109)*
+*Defined in [types.ts:109](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L109)*
 
 ___
 <a id="signature"></a>
@@ -67,7 +67,7 @@ ___
 
 **● signature**: *[ISignature](_types_.isignature.md)*
 
-*Defined in [types.ts:110](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L110)*
+*Defined in [types.ts:110](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L110)*
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 ▸ **addSignature**(signer: *[Address](../classes/_type_address_.address.md) \| `Uint8Array`*, signature: *`Uint8Array`*, nonce: *[AnyNumber](../modules/_types_.md#anynumber)*, era?: *[Uint8Array](../classes/_codec_u8a_.u8a.md#uint8array)*): `this`
 
-*Defined in [types.ts:111](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L111)*
+*Defined in [types.ts:111](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L111)*
 
 **Parameters:**
 
@@ -101,7 +101,7 @@ ___
 
 *Inherited from [Codec](_types_.codec.md).[eq](_types_.codec.md#eq)*
 
-*Defined in [types.ts:48](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L48)*
+*Defined in [types.ts:48](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L48)*
 
 *__description__*: Compares the value of the input to see if there is a match
 
@@ -120,7 +120,7 @@ ___
 
 ▸ **sign**(account: *`KeyringPair`*, options: *[SignatureOptions](../modules/_types_.md#signatureoptions)*): `this`
 
-*Defined in [types.ts:112](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L112)*
+*Defined in [types.ts:112](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L112)*
 
 **Parameters:**
 
@@ -140,7 +140,7 @@ ___
 
 *Inherited from [Codec](_types_.codec.md).[toHex](_types_.codec.md#tohex)*
 
-*Defined in [types.ts:53](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L53)*
+*Defined in [types.ts:53](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L53)*
 
 *__description__*: Returns a hex string representation of the value
 
@@ -155,7 +155,7 @@ ___
 
 *Inherited from [Codec](_types_.codec.md).[toJSON](_types_.codec.md#tojson)*
 
-*Defined in [types.ts:58](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L58)*
+*Defined in [types.ts:58](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L58)*
 
 *__description__*: Converts the Object to JSON, typically used for RPC transfers
 
@@ -170,7 +170,7 @@ ___
 
 *Inherited from [Codec](_types_.codec.md).[toString](_types_.codec.md#tostring)*
 
-*Defined in [types.ts:63](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L63)*
+*Defined in [types.ts:63](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L63)*
 
 *__description__*: Returns the string representation of the value
 
@@ -185,7 +185,7 @@ ___
 
 *Inherited from [Codec](_types_.codec.md).[toU8a](_types_.codec.md#tou8a)*
 
-*Defined in [types.ts:69](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/types.ts#L69)*
+*Defined in [types.ts:69](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/types.ts#L69)*
 
 *__description__*: Encodes the value as a Uint8Array as per the parity-codec specifications
 
