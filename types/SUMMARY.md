@@ -312,4 +312,7 @@
 * [&quot;types&quot;](modules/_types_.md)
   * [Codec](interfaces/_types_.codec.md)
   * [Constructor](interfaces/_types_.constructor.md)
+  * [IExtrinsic](interfaces/_types_.iextrinsic.md)
+  * [IHash](interfaces/_types_.ihash.md)
+  * [ISignature](interfaces/_types_.isignature.md)
   * [RuntimeVersionInterface](interfaces/_types_.runtimeversioninterface.md)

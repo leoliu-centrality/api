@@ -12,7 +12,7 @@
 
 **● defaultRegistry**: *[TypeRegistry](_codec_typeregistry_.typeregistry.md)* =  new TypeRegistry()
 
-*Defined in [codec/typeRegistry.ts:12](https://github.com/polkadot-js/api/blob/847d5d1/packages/types/src/codec/typeRegistry.ts#L12)*
+*Defined in [codec/typeRegistry.ts:11](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/codec/typeRegistry.ts#L11)*
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 ▸ **get**(name: *`string`*): [Constructor](../interfaces/_types_.constructor.md) \| `undefined`
 
-*Defined in [codec/typeRegistry.ts:47](https://github.com/polkadot-js/api/blob/847d5d1/packages/types/src/codec/typeRegistry.ts#L47)*
+*Defined in [codec/typeRegistry.ts:48](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/codec/typeRegistry.ts#L48)*
 
 **Parameters:**
 
@@ -35,6 +35,24 @@ ___
 **Returns:** [Constructor](../interfaces/_types_.constructor.md) \| `undefined`
 
 ___
+<a id="getorthrow"></a>
+
+##  getOrThrow
+
+▸ **getOrThrow**(name: *`string`*, msg?: *`undefined` \| `string`*): [Constructor](../interfaces/_types_.constructor.md)
+
+*Defined in [codec/typeRegistry.ts:52](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/codec/typeRegistry.ts#L52)*
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| name | `string` |
+| `Optional` msg | `undefined` \| `string` |
+
+**Returns:** [Constructor](../interfaces/_types_.constructor.md)
+
+___
 <a id="register"></a>
 
 ##  register
@@ -43,7 +61,7 @@ ___
 
 ▸ **register**(name: *`string`*, type: *[Constructor](../interfaces/_types_.constructor.md)*): `void`
 
-*Defined in [codec/typeRegistry.ts:16](https://github.com/polkadot-js/api/blob/847d5d1/packages/types/src/codec/typeRegistry.ts#L16)*
+*Defined in [codec/typeRegistry.ts:15](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/codec/typeRegistry.ts#L15)*
 
 **Parameters:**
 
@@ -53,7 +71,7 @@ ___
 
 **Returns:** `void`
 
-*Defined in [codec/typeRegistry.ts:17](https://github.com/polkadot-js/api/blob/847d5d1/packages/types/src/codec/typeRegistry.ts#L17)*
+*Defined in [codec/typeRegistry.ts:16](https://github.com/polkadot-js/api/blob/eaea874/packages/types/src/codec/typeRegistry.ts#L16)*
 
 **Parameters:**
 
