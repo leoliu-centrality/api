@@ -23,6 +23,7 @@
 # Implements
 
 * [Codec](../interfaces/_types_.codec.md)
+* [IHash](../interfaces/_types_.ihash.md)
 
 # Indexable
 
@@ -39,7 +40,7 @@
 
 *Overrides [U8aFixed](_codec_u8afixed_.u8afixed.md).[constructor](_codec_u8afixed_.u8afixed.md#constructor)*
 
-*Defined in [primitive/H256.ts:15](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/primitive/H256.ts#L15)*
+*Defined in [primitive/H256.ts:15](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/primitive/H256.ts#L15)*
 
 **Parameters:**
 
@@ -59,6 +60,8 @@ ___
 
 **● BYTES_PER_ELEMENT**: *`number`*
 
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[BYTES_PER_ELEMENT](../interfaces/_types_.ihash.md#bytes_per_element)*
+
 *Inherited from Uint8Array.BYTES_PER_ELEMENT*
 
 *Defined in /home/travis/build/polkadot-js/api/node_modules/typescript/lib/lib.es5.d.ts:1962*
@@ -72,6 +75,8 @@ ___
 
 **● __@toStringTag**: *"UInt8Array"*
 
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[__@toStringTag](../interfaces/_types_.ihash.md#___tostringtag)*
+
 *Inherited from Uint8Array.[Symbol.toStringTag]*
 
 *Defined in /home/travis/build/polkadot-js/api/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts:276*
@@ -82,6 +87,8 @@ ___
 ##  buffer
 
 **● buffer**: *`ArrayBufferLike`*
+
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[buffer](../interfaces/_types_.ihash.md#buffer)*
 
 *Inherited from Uint8Array.buffer*
 
@@ -96,6 +103,8 @@ ___
 
 **● byteLength**: *`number`*
 
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[byteLength](../interfaces/_types_.ihash.md#bytelength)*
+
 *Inherited from Uint8Array.byteLength*
 
 *Defined in /home/travis/build/polkadot-js/api/node_modules/typescript/lib/lib.es5.d.ts:1972*
@@ -108,6 +117,8 @@ ___
 ##  byteOffset
 
 **● byteOffset**: *`number`*
+
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[byteOffset](../interfaces/_types_.ihash.md#byteoffset)*
 
 *Inherited from Uint8Array.byteOffset*
 
@@ -127,7 +138,7 @@ ___
 
 *Inherited from [U8a](_codec_u8a_.u8a.md).[encodedLength](_codec_u8a_.u8a.md#encodedlength)*
 
-*Defined in [codec/U8a.ts:36](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/codec/U8a.ts#L36)*
+*Defined in [codec/U8a.ts:36](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/codec/U8a.ts#L36)*
 
 *__description__*: The length of the value when encoded as a Uint8Array
 
@@ -142,7 +153,7 @@ ___
 
 *Inherited from [U8a](_codec_u8a_.u8a.md).[isEmpty](_codec_u8a_.u8a.md#isempty)*
 
-*Defined in [codec/U8a.ts:43](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/codec/U8a.ts#L43)*
+*Defined in [codec/U8a.ts:43](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/codec/U8a.ts#L43)*
 
 *__description__*: Returns true if the type wraps an empty/default all-0 value
 
@@ -159,7 +170,7 @@ ___
 
 *Overrides Uint8Array.length*
 
-*Defined in [codec/U8a.ts:50](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/codec/U8a.ts#L50)*
+*Defined in [codec/U8a.ts:50](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/codec/U8a.ts#L50)*
 
 *__description__*: The length of the value
 
@@ -174,6 +185,8 @@ ___
 ##  __@iterator
 
 ▸ **__@iterator**(): `IterableIterator`<`number`>
+
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[__@iterator](../interfaces/_types_.ihash.md#___iterator)*
 
 *Inherited from Uint8Array.[Symbol.iterator]*
 
@@ -190,7 +203,7 @@ ___
 
 *Inherited from [U8aFixed](_codec_u8afixed_.u8afixed.md).[bitLength](_codec_u8afixed_.u8afixed.md#bitlength)*
 
-*Defined in [codec/U8aFixed.ts:52](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/codec/U8aFixed.ts#L52)*
+*Defined in [codec/U8aFixed.ts:52](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/codec/U8aFixed.ts#L52)*
 
 *__description__*: Returns the number of bits in the value
 
@@ -202,6 +215,8 @@ ___
 ##  copyWithin
 
 ▸ **copyWithin**(target: *`number`*, start: *`number`*, end?: *`undefined` \| `number`*): `this`
+
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[copyWithin](../interfaces/_types_.ihash.md#copywithin)*
 
 *Inherited from Uint8Array.copyWithin*
 
@@ -226,6 +241,8 @@ ___
 
 ▸ **entries**(): `IterableIterator`<[`number`, `number`]>
 
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[entries](../interfaces/_types_.ihash.md#entries)*
+
 *Inherited from Uint8Array.entries*
 
 *Defined in /home/travis/build/polkadot-js/api/node_modules/typescript/lib/lib.es2015.iterable.d.ts:271*
@@ -241,11 +258,11 @@ ___
 
 ▸ **eq**(other?: *`any`*): `boolean`
 
-*Implementation of [Codec](../interfaces/_types_.codec.md).[eq](../interfaces/_types_.codec.md#eq)*
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[eq](../interfaces/_types_.ihash.md#eq)*
 
 *Inherited from [U8a](_codec_u8a_.u8a.md).[eq](_codec_u8a_.u8a.md#eq)*
 
-*Defined in [codec/U8a.ts:58](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/codec/U8a.ts#L58)*
+*Defined in [codec/U8a.ts:58](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/codec/U8a.ts#L58)*
 
 *__description__*: Compares the value of the input to see if there is a match
 
@@ -285,6 +302,8 @@ ___
 ##  fill
 
 ▸ **fill**(value: *`number`*, start?: *`undefined` \| `number`*, end?: *`undefined` \| `number`*): `this`
+
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[fill](../interfaces/_types_.ihash.md#fill)*
 
 *Inherited from Uint8Array.fill*
 
@@ -397,6 +416,8 @@ ___
 
 ▸ **includes**(searchElement: *`number`*, fromIndex?: *`undefined` \| `number`*): `boolean`
 
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[includes](../interfaces/_types_.ihash.md#includes)*
+
 *Inherited from Uint8Array.includes*
 
 *Defined in /home/travis/build/polkadot-js/api/node_modules/typescript/lib/lib.es2016.array.include.d.ts:54*
@@ -418,6 +439,8 @@ ___
 ##  indexOf
 
 ▸ **indexOf**(searchElement: *`number`*, fromIndex?: *`undefined` \| `number`*): `number`
+
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[indexOf](../interfaces/_types_.ihash.md#indexof)*
 
 *Inherited from Uint8Array.indexOf*
 
@@ -441,6 +464,8 @@ ___
 
 ▸ **join**(separator?: *`undefined` \| `string`*): `string`
 
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[join](../interfaces/_types_.ihash.md#join)*
+
 *Inherited from Uint8Array.join*
 
 *Defined in /home/travis/build/polkadot-js/api/node_modules/typescript/lib/lib.es5.d.ts:2063*
@@ -462,6 +487,8 @@ ___
 
 ▸ **keys**(): `IterableIterator`<`number`>
 
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[keys](../interfaces/_types_.ihash.md#keys)*
+
 *Inherited from Uint8Array.keys*
 
 *Defined in /home/travis/build/polkadot-js/api/node_modules/typescript/lib/lib.es2015.iterable.d.ts:275*
@@ -476,6 +503,8 @@ ___
 ##  lastIndexOf
 
 ▸ **lastIndexOf**(searchElement: *`number`*, fromIndex?: *`undefined` \| `number`*): `number`
+
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[lastIndexOf](../interfaces/_types_.ihash.md#lastindexof)*
 
 *Inherited from Uint8Array.lastIndexOf*
 
@@ -633,6 +662,8 @@ ___
 
 ▸ **reverse**(): `Uint8Array`
 
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[reverse](../interfaces/_types_.ihash.md#reverse)*
+
 *Inherited from Uint8Array.reverse*
 
 *Defined in /home/travis/build/polkadot-js/api/node_modules/typescript/lib/lib.es5.d.ts:2141*
@@ -647,6 +678,8 @@ ___
 ##  set
 
 ▸ **set**(array: *`ArrayLike`<`number`>*, offset?: *`undefined` \| `number`*): `void`
+
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[set](../interfaces/_types_.ihash.md#set)*
 
 *Inherited from Uint8Array.set*
 
@@ -669,6 +702,8 @@ ___
 ##  slice
 
 ▸ **slice**(start?: *`undefined` \| `number`*, end?: *`undefined` \| `number`*): `Uint8Array`
+
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[slice](../interfaces/_types_.ihash.md#slice)*
 
 *Inherited from Uint8Array.slice*
 
@@ -735,11 +770,13 @@ ___
 
 ▸ **subarray**(begin: *`number`*, end?: *`undefined` \| `number`*): `Uint8Array`
 
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[subarray](../interfaces/_types_.ihash.md#subarray)*
+
 *Inherited from [U8a](_codec_u8a_.u8a.md).[subarray](_codec_u8a_.u8a.md#subarray)*
 
 *Overrides Uint8Array.subarray*
 
-*Defined in [codec/U8a.ts:73](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/codec/U8a.ts#L73)*
+*Defined in [codec/U8a.ts:73](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/codec/U8a.ts#L73)*
 
 *__description__*: Create a new subarray from the actual buffer. This is needed for compat reasons since a new Uint8Array gets returned here
 
@@ -759,11 +796,11 @@ ___
 
 ▸ **toHex**(): `string`
 
-*Implementation of [Codec](../interfaces/_types_.codec.md).[toHex](../interfaces/_types_.codec.md#tohex)*
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[toHex](../interfaces/_types_.ihash.md#tohex)*
 
 *Inherited from [U8a](_codec_u8a_.u8a.md).[toHex](_codec_u8a_.u8a.md#tohex)*
 
-*Defined in [codec/U8a.ts:80](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/codec/U8a.ts#L80)*
+*Defined in [codec/U8a.ts:80](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/codec/U8a.ts#L80)*
 
 *__description__*: Returns a hex string representation of the value
 
@@ -776,11 +813,11 @@ ___
 
 ▸ **toJSON**(): `any`
 
-*Implementation of [Codec](../interfaces/_types_.codec.md).[toJSON](../interfaces/_types_.codec.md#tojson)*
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[toJSON](../interfaces/_types_.ihash.md#tojson)*
 
 *Inherited from [U8a](_codec_u8a_.u8a.md).[toJSON](_codec_u8a_.u8a.md#tojson)*
 
-*Defined in [codec/U8a.ts:87](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/codec/U8a.ts#L87)*
+*Defined in [codec/U8a.ts:87](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/codec/U8a.ts#L87)*
 
 *__description__*: Converts the Object to JSON, typically used for RPC transfers
 
@@ -792,6 +829,8 @@ ___
 ##  toLocaleString
 
 ▸ **toLocaleString**(): `string`
+
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[toLocaleString](../interfaces/_types_.ihash.md#tolocalestring)*
 
 *Inherited from Uint8Array.toLocaleString*
 
@@ -808,13 +847,13 @@ ___
 
 ▸ **toString**(): `string`
 
-*Implementation of [Codec](../interfaces/_types_.codec.md).[toString](../interfaces/_types_.codec.md#tostring)*
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[toString](../interfaces/_types_.ihash.md#tostring)*
 
 *Inherited from [U8a](_codec_u8a_.u8a.md).[toString](_codec_u8a_.u8a.md#tostring)*
 
 *Overrides Uint8Array.toString*
 
-*Defined in [codec/U8a.ts:94](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/codec/U8a.ts#L94)*
+*Defined in [codec/U8a.ts:94](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/codec/U8a.ts#L94)*
 
 *__description__*: Returns the string representation of the value
 
@@ -827,11 +866,11 @@ ___
 
 ▸ **toU8a**(isBare?: *`undefined` \| `false` \| `true`*): `Uint8Array`
 
-*Implementation of [Codec](../interfaces/_types_.codec.md).[toU8a](../interfaces/_types_.codec.md#tou8a)*
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[toU8a](../interfaces/_types_.ihash.md#tou8a)*
 
 *Inherited from [U8a](_codec_u8a_.u8a.md).[toU8a](_codec_u8a_.u8a.md#tou8a)*
 
-*Defined in [codec/U8a.ts:102](https://github.com/polkadot-js/api/blob/4ffe80c/packages/types/src/codec/U8a.ts#L102)*
+*Defined in [codec/U8a.ts:102](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/codec/U8a.ts#L102)*
 
 *__description__*: Encodes the value as a Uint8Array as per the parity-codec specifications
 
@@ -849,6 +888,8 @@ ___
 ##  values
 
 ▸ **values**(): `IterableIterator`<`number`>
+
+*Implementation of [IHash](../interfaces/_types_.ihash.md).[values](../interfaces/_types_.ihash.md#values)*
 
 *Inherited from Uint8Array.values*
 
