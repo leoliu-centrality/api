@@ -7,7 +7,7 @@
 # Callable
 ▸ **__call**(...args: *`any`[]*): [Method](../classes/_primitive_method_.method.md)
 
-*Defined in [primitive/Method.ts:24](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/primitive/Method.ts#L24)*
+*Defined in [primitive/Method.ts:24](https://github.com/polkadot-js/api/blob/452a9dd/packages/types/src/primitive/Method.ts#L24)*
 
 **Parameters:**
 
@@ -25,7 +25,7 @@
 
 **● callIndex**: *`Uint8Array`*
 
-*Defined in [primitive/Method.ts:26](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/primitive/Method.ts#L26)*
+*Defined in [primitive/Method.ts:26](https://github.com/polkadot-js/api/blob/452a9dd/packages/types/src/primitive/Method.ts#L26)*
 
 ___
 <a id="meta"></a>
@@ -34,7 +34,7 @@ ___
 
 **● meta**: *[FunctionMetadata](../classes/_metadata_v0_modules_.functionmetadata.md)*
 
-*Defined in [primitive/Method.ts:27](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/primitive/Method.ts#L27)*
+*Defined in [primitive/Method.ts:27](https://github.com/polkadot-js/api/blob/452a9dd/packages/types/src/primitive/Method.ts#L27)*
 
 ___
 <a id="method"></a>
@@ -43,7 +43,7 @@ ___
 
 **● method**: *`string`*
 
-*Defined in [primitive/Method.ts:28](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/primitive/Method.ts#L28)*
+*Defined in [primitive/Method.ts:28](https://github.com/polkadot-js/api/blob/452a9dd/packages/types/src/primitive/Method.ts#L28)*
 
 ___
 <a id="section"></a>
@@ -52,7 +52,7 @@ ___
 
 **● section**: *`string`*
 
-*Defined in [primitive/Method.ts:29](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/primitive/Method.ts#L29)*
+*Defined in [primitive/Method.ts:29](https://github.com/polkadot-js/api/blob/452a9dd/packages/types/src/primitive/Method.ts#L29)*
 
 ___
 <a id="tojson"></a>
@@ -61,7 +61,7 @@ ___
 
 **● toJSON**: *`function`*
 
-*Defined in [primitive/Method.ts:30](https://github.com/polkadot-js/api/blob/1ed1bfa/packages/types/src/primitive/Method.ts#L30)*
+*Defined in [primitive/Method.ts:30](https://github.com/polkadot-js/api/blob/452a9dd/packages/types/src/primitive/Method.ts#L30)*
 
 #### Type declaration
 ▸(): `any`
