@@ -4,7 +4,7 @@
 
 import { KeyringPair } from '@polkadot/keyring/types';
 import { AnyNumber, AnyU8a, ArgsDef, Codec, IExtrinsic, SignatureOptions } from '../types';
-
+import {Option} from '../index';
 import { isHex, isU8a, u8aToHex, u8aToU8a } from '@polkadot/util';
 import { blake2AsU8a } from '@polkadot/util-crypto';
 
@@ -15,10 +15,12 @@ import Method from '../primitive/Method';
 import Address from './Address';
 import ExtrinsicSignature from './ExtrinsicSignature';
 import Hash from './Hash';
+import Doughnut from './Doughnut';
 
 type ExtrinsicValue = {
   method?: Method
   signature?: ExtrinsicSignature
+  Doughnut?: Doughnut
 };
 
 /**
@@ -37,7 +39,8 @@ export default class Extrinsic extends Struct implements IExtrinsic {
   constructor (value?: ExtrinsicValue | AnyU8a | Method) {
     super({
       signature: ExtrinsicSignature,
-      method: Method
+      method: Method,
+      doughnut: Option.with(Doughnut)
     }, Extrinsic.decodeExtrinsic(value || {}));
   }
 
