@@ -1,5 +1,5 @@
 {
-  "version": "0.46.3",
+  "version": "0.46.11",
   "private": true,
   "engines": {
     "node": ">=10.13.0",
@@ -25,8 +25,8 @@
     "@babel/core": "^7.3.3",
     "@babel/register": "^7.0.0",
     "@babel/runtime": "^7.3.4",
-    "@polkadot/dev": "^0.25.11",
-    "@polkadot/ts": "^0.1.55",
+    "@polkadot/dev": "^0.25.13",
+    "@polkadot/ts": "^0.1.56",
     "gh-pages": "^2.0.1"
   }
 }
