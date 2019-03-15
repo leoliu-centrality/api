@@ -10,9 +10,9 @@ export class Certificate extends Struct {
       expires: U64,
       version: U32,
       holder: AccountId,
-      issuer: AccountId,
       not_before: U64,
       permissions: Text,
+      issuer: AccountId,
     }, value);
   }
 }
@@ -20,8 +20,8 @@ export class Certificate extends Struct {
 export class Doughnut extends Struct {
     constructor (value?: any) {
         super({
-          signature: Signature,
           certificate: Certificate,
+          signature: Signature,
           compact: U8a,
         }, value);
       }

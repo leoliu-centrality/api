@@ -5,6 +5,7 @@
 import { KeyringPair } from '@polkadot/keyring/types';
 import { AnyNumber, AnyU8a } from '../types';
 
+import {Option} from '../index';
 import { blake2AsU8a } from '@polkadot/util-crypto';
 
 import Struct from '../codec/Struct';
@@ -13,12 +14,14 @@ import Hash from './Hash';
 import Method from '../primitive/Method';
 import Nonce from './NonceCompact';
 import RuntimeVersion from '../rpc/RuntimeVersion';
+import { Doughnut } from './Doughnut';
 
 type SignaturePayloadValue = {
   nonce?: AnyNumber,
   method?: Method,
   era?: AnyU8a | ExtrinsicEra
-  blockHash?: AnyU8a
+  blockHash?: AnyU8a,
+  doughnut?: Doughnut
 };
 
 /**
@@ -40,7 +43,8 @@ export default class SignaturePayload extends Struct {
       nonce: Nonce,
       method: Method,
       era: ExtrinsicEra,
-      blockHash: Hash
+      blockHash: Hash,
+      doughnut: Option.with(Doughnut),
     }, value);
   }
 

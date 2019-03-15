@@ -15,7 +15,7 @@ import Method from '../primitive/Method';
 import Address from './Address';
 import ExtrinsicSignature from './ExtrinsicSignature';
 import Hash from './Hash';
-import Doughnut from './Doughnut';
+import {Doughnut} from './Doughnut';
 
 type ExtrinsicValue = {
   method?: Method

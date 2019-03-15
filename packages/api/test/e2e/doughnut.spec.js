@@ -2,7 +2,9 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 import testingPairs from '@polkadot/keyring/testingPairs';
+import {u8aToHex } from '@polkadot/util';
 import Api from '../../src/promise';
+import U8 from '@polkadot/types/primitive/U8';
 // import makeDoughnut from '../../../doughnut-js/src';
 import { Certificate, Doughnut } from '../../../types/src/type/Doughnut.ts'
 
@@ -23,6 +25,16 @@ typeRegistry.register({
   Topic: 'u256',
   Value: 'u256',
   Amount: 'u256',
+  AcceptPayload: 'u256',
+  DeviceId: 'u256',
+  ExchangeKey: 'u256',
+  Invite: 'u256',
+  PermissionOptions: 'u256',
+  PreKeyBundle: 'u256',
+  BalanceLock: 'u256',
+  Exposure: 'u256',
+  RewardDestination: 'u256',
+  StakingLedger: 'u256',
 });
 
 
@@ -66,18 +78,20 @@ describe('sending test doughnut', () => {
       compact: c
     });
 
-    let t = api.tx.balances
-      .transfer(keyring.bob.address(), 12345);
-    t.doughnut = doughnut;
-    return t.sign(keyring.dave, { nonce })
-      .send(({ events, status, type }) => {
-        console.log('Transaction status:', type);
+    let t = api.tx.genericAsset.transfer(0, keyring.bob.address(), 12345);
+    t.set("doughnut", doughnut);
+    // console.log('alice address', u8aToHex(keyring.decodeAddress(keyring.alice.address())));
+    // console.log('bob address', u8aToHex(keyring.decodeAddress(keyring.alice.address())));
+    // console.log('dave address', u8aToHex(keyring.decodeAddress(keyring.alice.address())));
+    let signed = t.sign(keyring.dave, { nonce })
+    return signed.send(({ events, status, type }) => {
+        // console.log('Transaction status:', type);
         if (type === 'Finalised') {
-          console.log('Completed at block hash', status.value.toHex());
-          console.log('Events:');
+          // console.log('Completed at block hash', status.value.toHex());
+          // console.log('Events:');
 
           events.forEach(({ phase, event: { data, method, section } }) => {
-            console.log('\t', phase.toString(), `: ${section}.${method}`, data.toString());
+            // console.log('\t', phase.toString(), `: ${section}.${method}`, data.toString());
           });
 
           if (events.length) {

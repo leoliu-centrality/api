@@ -8,6 +8,7 @@ import U8a from './codec/U8a';
 import Method from './primitive/Method';
 import Address from './type/Address';
 import { FunctionMetadata } from './Metadata/v0/Modules';
+import { Doughnut } from './type/Doughnut';
 
 export type CodecArg = Codec | BN | Boolean | String | Uint8Array | boolean | number | string | undefined | CodecArgArray | CodecArgObject;
 
@@ -97,7 +98,8 @@ export type SignatureOptions = {
   blockHash: AnyU8a,
   era?: Uint8Array,
   nonce: AnyNumber,
-  version?: RuntimeVersionInterface
+  version?: RuntimeVersionInterface,
+  doughnut?: Doughnut
 };
 
 export interface ArgsDef {

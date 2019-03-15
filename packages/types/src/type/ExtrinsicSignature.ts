@@ -5,6 +5,7 @@
 import { KeyringPair } from '@polkadot/keyring/types';
 import { AnyNumber, IExtrinsicSignature, SignatureOptions } from '../types';
 
+import {Option} from '../index';
 import Struct from '../codec/Struct';
 import Address from './Address';
 import Method from '../primitive/Method';
@@ -14,12 +15,14 @@ import Nonce from './NonceCompact';
 import RuntimeVersion from '../rpc/RuntimeVersion';
 import Signature from './Signature';
 import SignaturePayload from './SignaturePayload';
+import { Doughnut } from './Doughnut';
 
 export const IMMORTAL_ERA = new Uint8Array([0]);
 
 const BIT_SIGNED = 0b10000000;
 const BIT_UNSIGNED = 0;
 const BIT_VERSION = 0b0000001;
+const BIT_DOUGHNUT = 0b01000000;
 
 /**
  * @name ExtrinsicSignature
@@ -39,7 +42,8 @@ export default class ExtrinsicSignature extends Struct implements IExtrinsicSign
       signer: Address,
       signature: Signature,
       nonce: Nonce,
-      era: ExtrinsicEra
+      era: ExtrinsicEra,
+      doughnut: Option.with(Doughnut),
     }, ExtrinsicSignature.decodeExtrinsicSignature(value));
   }
 
@@ -47,11 +51,11 @@ export default class ExtrinsicSignature extends Struct implements IExtrinsicSign
     if (!value) {
       return {
         // we always explicitly set the unsigned version
-        version: BIT_VERSION | BIT_UNSIGNED
+        version: BIT_VERSION | BIT_UNSIGNED | BIT_DOUGHNUT
       };
     }
 
-    const version = value[0];
+    const version = value[0] | BIT_DOUGHNUT;
 
     // only decode the full Uint8Array if we have the signed indicator,
     // alternatively only return the version (default for others)
@@ -120,7 +124,7 @@ export default class ExtrinsicSignature extends Struct implements IExtrinsicSign
     this.set('nonce', nonce);
     this.set('signer', signer);
     this.set('signature', signature);
-    this.set('version', new U8(BIT_VERSION | BIT_SIGNED));
+    this.set('version', new U8(BIT_VERSION | BIT_SIGNED | BIT_DOUGHNUT));
 
     return this;
   }
@@ -140,13 +144,14 @@ export default class ExtrinsicSignature extends Struct implements IExtrinsicSign
   /**
    * @description Generate a payload and pplies the signature from a keypair
    */
-  sign (method: Method, account: KeyringPair, { blockHash, era, nonce, version }: SignatureOptions): ExtrinsicSignature {
+  sign (method: Method, account: KeyringPair, { blockHash, era, nonce, version, doughnut }: SignatureOptions): ExtrinsicSignature {
     const signer = new Address(account.publicKey());
     const signingPayload = new SignaturePayload({
       nonce,
       method,
       era: era || IMMORTAL_ERA,
-      blockHash
+      blockHash,
+      doughnut
     });
     const signature = new Signature(signingPayload.sign(account, version as RuntimeVersion));
 

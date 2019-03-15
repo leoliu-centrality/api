@@ -160,7 +160,7 @@ export function createSubmittableExtrinsic<CodecResult, SubscriptionResult> (typ
           const options: Partial<SignatureOptions> = isBn(_options) || isNumber(_options)
             ? { nonce: _options as any as number }
             : _options;
-
+          options.doughnut = this.doughnut;
           signOrigin.apply(_extrinsic, [account, expandOptions(options)]);
 
           return this;
