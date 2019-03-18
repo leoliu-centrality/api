@@ -4,7 +4,7 @@
 
 import { KeyringPair } from '@polkadot/keyring/types';
 import { AnyNumber, AnyU8a, ArgsDef, Codec, IExtrinsic, SignatureOptions } from '../types';
-import {Option} from '../index';
+import { Option } from '../index';
 import { isHex, isU8a, u8aToHex, u8aToU8a } from '@polkadot/util';
 import { blake2AsU8a } from '@polkadot/util-crypto';
 
@@ -15,12 +15,12 @@ import Method from '../primitive/Method';
 import Address from './Address';
 import ExtrinsicSignature from './ExtrinsicSignature';
 import Hash from './Hash';
-import {Doughnut} from './Doughnut';
+import { Doughnut, OptionDoughnut } from './Doughnut';
 
 type ExtrinsicValue = {
   method?: Method
   signature?: ExtrinsicSignature
-  Doughnut?: Doughnut
+  doughnut?: Option<Doughnut>
 };
 
 /**
@@ -43,7 +43,7 @@ export default class Extrinsic extends Struct implements IExtrinsic {
   static decodeExtrinsic (value: ExtrinsicValue | AnyU8a | Method): [any, ExtrinsicValue | Array<number> | Uint8Array] {
     let defWithDoughnut = {
       signature: ExtrinsicSignature,
-      doughnut: Doughnut,
+      doughnut: OptionDoughnut,
       method: Method
     };
     let defWithoutDoughnut = {
@@ -70,19 +70,23 @@ export default class Extrinsic extends Struct implements IExtrinsic {
       const [offset, length] = Compact.decodeU8a(value);
 
       let arr = value.subarray(offset, offset + length.toNumber());
-      let withDoughnut = arr[0] | 0b01000000;
+      let withDoughnut = arr[0] & 0b01000000;
       if (withDoughnut) {
         return [defWithDoughnut, arr];
       } else {
         return [defWithoutDoughnut, arr];
       }
     } else if (value instanceof Method) {
-      return [defWithDoughnut, {
+      return [defWithoutDoughnut, {
         method: value
       }];
     }
 
-    return [defWithDoughnut, value];
+    if (value.doughnut && value.doughnut.isSome) {
+      return [defWithDoughnut, value];
+    } else {
+      return [defWithoutDoughnut, value];
+    }
   }
 
   /**
@@ -173,6 +177,10 @@ export default class Extrinsic extends Struct implements IExtrinsic {
     return this.get('signature') as ExtrinsicSignature;
   }
 
+  get doughnut (): Option<Doughnut> {
+    return (this.get('doughnut') || new OptionDoughnut()) as Option<Doughnut>;
+  }
+
   /**
    * @description Add an [[ExtrinsicSignature]] to the extrinsic (already generated)
    */
@@ -187,6 +195,9 @@ export default class Extrinsic extends Struct implements IExtrinsic {
    */
   sign (account: KeyringPair, options: SignatureOptions): Extrinsic {
     this.signature.sign(this.method, account, options);
+    if (options.doughnut && options.doughnut.isSome) {
+      this.set('doughnut', options.doughnut);
+    }
 
     return this;
   }
@@ -205,13 +216,28 @@ export default class Extrinsic extends Struct implements IExtrinsic {
     return this.toHex();
   }
 
+  toObj (): any {
+    return super.toJSON();
+  }
+
+  toArray (): Array<Codec> {
+    const arr: [Codec] = [this.signature];
+    if (this.doughnut.isSome) {
+      arr.push(this.doughnut.unwrap());
+    } else if (this.doughnut instanceof Doughnut) {
+      arr.push(this.doughnut);
+    }
+    arr.push(this.method);
+    return arr;
+  }
+
   /**
    * @description Encodes the value as a Uint8Array as per the parity-codec specifications
    * @param isBare true when the value has none of the type-specific prefixes (internal)
    */
   toU8a (isBare?: boolean): Uint8Array {
     const encoded = super.toU8a();
-
+    console.log('encodec len', encoded.length);
     return isBare
       ? encoded
       : Compact.addLengthPrefix(encoded);

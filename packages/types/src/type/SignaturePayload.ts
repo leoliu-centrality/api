@@ -45,7 +45,7 @@ export default class SignaturePayload extends Struct {
       method: Method,
       era: ExtrinsicEra,
       blockHash: Hash,
-      // doughnut: Option.with(Doughnut)
+      doughnut: Option.with(Doughnut)
     }, value);
   }
 
@@ -99,22 +99,19 @@ export default class SignaturePayload extends Struct {
     return this.get('doughnut') as Option<Doughnut>;
   }
 
-  // toU8a (isBare?: boolean): Uint8Array {
-  //   let values = this.toArray();
-  //   console.log('??', this);
-  //   if (this.doughnut.isSome) {
-  //     values[values.length - 1] = this.doughnut.unwrap();
-  //   } else {
-  //     console.log('??', values);
-  //     values.pop();
-  //     console.log('??2', values);
-  //   }
-  //   return u8aConcat(
-  //     ...values.map((entry) =>
-  //       entry.toU8a(isBare)
-  //     )
-  //   );
-  // }
+  toU8a (isBare?: boolean): Uint8Array {
+    let values = this.toArray();
+    if (this.doughnut.isSome) {
+      values[values.length - 1] = this.doughnut.unwrap();
+    } else {
+      values.pop();
+    }
+    return u8aConcat(
+      ...values.map((entry) =>
+        entry.toU8a(isBare)
+      )
+    );
+  }
 
   /**
    * @description Sign the payload with the keypair

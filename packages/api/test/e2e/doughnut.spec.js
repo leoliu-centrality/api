@@ -5,6 +5,7 @@ import testingPairs from '@polkadot/keyring/testingPairs';
 import Api from '../../src/promise';
 // import makeDoughnut from '../../../doughnut-js/src';
 import { Certificate, Doughnut, OptionDoughnut } from '../../../types/src/type/Doughnut.ts'
+import { Text } from '@polkadot/types'
 
 const keyring = testingPairs({ type: 'ed25519' });
 
@@ -63,25 +64,30 @@ describe('sending test doughnut', () => {
       expires: Math.floor(expires.getTime() / 1000),
       not_before: Math.floor(new Date().getTime() / 1000),
       version: 1,
-      permissions: [['cennznet', 'true']],
+      permissions: [[new Text('cennznet'), new Text('true')]],
       holder: keyring.dave.address(),
       issuer: keyring.alice.address(),
     });
+
+    // console.log('cert_value', cert_value.toJSON())
 
     const c = cert_value.toU8a();
 
     const doughnut = new OptionDoughnut(new Doughnut({
       certificate: cert_value,
       signature: keyring.alice.sign(c),
-      compact: c
     }));
+
+    // console.log(doughnut.unwrap().get('certificate').get('permissions'));
 
     let t = api.tx.genericAsset.transfer(0, keyring.bob.address(), 12345);
     // console.log('alice address', u8aToHex(keyring.decodeAddress(keyring.alice.address())));
     // console.log('bob address', u8aToHex(keyring.decodeAddress(keyring.alice.address())));
     // console.log('dave address', u8aToHex(keyring.decodeAddress(keyring.alice.address())));
-    let signed = t.sign(keyring.alice, { nonce })
-    console.log('signed', signed.toHex())
+    // console.log('unsigned', t.toObj(), t.toHex());
+    let signed = t.sign(keyring.dave, { nonce, doughnut })
+    console.log('signed', signed.toObj(), signed.toHex())
+    console.log('doughnut', doughnut.unwrap().toHex())
     return signed.send(({ events, status, type }) => {
         console.log('Transaction status:', type);
         if (type === 'Finalised') {
@@ -92,10 +98,9 @@ describe('sending test doughnut', () => {
             console.log('\t', phase.toString(), `: ${section}.${method}`, data.toString());
           });
 
-          if (events.length) {
-            done();
-          }
+          done();
         }
       });
+    done();
   });
 });
