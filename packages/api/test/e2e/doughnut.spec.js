@@ -80,7 +80,8 @@ describe('sending test doughnut', () => {
     // console.log('alice address', u8aToHex(keyring.decodeAddress(keyring.alice.address())));
     // console.log('bob address', u8aToHex(keyring.decodeAddress(keyring.alice.address())));
     // console.log('dave address', u8aToHex(keyring.decodeAddress(keyring.alice.address())));
-    let signed = t.sign(keyring.dave, { nonce })
+    let signed = t.sign(keyring.alice, { nonce })
+    console.log('signed', signed.toHex())
     return signed.send(({ events, status, type }) => {
         console.log('Transaction status:', type);
         if (type === 'Finalised') {

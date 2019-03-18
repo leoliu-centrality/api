@@ -5,7 +5,6 @@
 import { KeyringPair } from '@polkadot/keyring/types';
 import { AnyNumber, IExtrinsicSignature, SignatureOptions } from '../types';
 
-import {Option} from '../index';
 import Struct from '../codec/Struct';
 import Address from './Address';
 import Method from '../primitive/Method';
@@ -50,11 +49,11 @@ export default class ExtrinsicSignature extends Struct implements IExtrinsicSign
     if (!value) {
       return {
         // we always explicitly set the unsigned version
-        version: BIT_VERSION | BIT_UNSIGNED | BIT_DOUGHNUT
+        version: BIT_VERSION | BIT_UNSIGNED
       };
     }
 
-    const version = value[0] | BIT_DOUGHNUT;
+    const version = value[0];
 
     // only decode the full Uint8Array if we have the signed indicator,
     // alternatively only return the version (default for others)
@@ -123,7 +122,8 @@ export default class ExtrinsicSignature extends Struct implements IExtrinsicSign
     this.set('nonce', nonce);
     this.set('signer', signer);
     this.set('signature', signature);
-    this.set('version', new U8(BIT_VERSION | BIT_SIGNED | BIT_DOUGHNUT));
+    // this.set('version', new U8(BIT_VERSION | BIT_SIGNED | BIT_DOUGHNUT));
+    this.set('version', new U8(BIT_VERSION | BIT_SIGNED));
 
     return this;
   }
