@@ -37,14 +37,20 @@ type ExtrinsicValue = {
  */
 export default class Extrinsic extends Struct implements IExtrinsic {
   constructor (value?: ExtrinsicValue | AnyU8a | Method) {
-    super({
-      signature: ExtrinsicSignature,
-      method: Method,
-      doughnut: Option.with(Doughnut)
-    }, Extrinsic.decodeExtrinsic(value || {}));
+    super(...Extrinsic.decodeExtrinsic(value || {}));
   }
 
-  static decodeExtrinsic (value: ExtrinsicValue | AnyU8a | Method): ExtrinsicValue | Array<number> | Uint8Array {
+  static decodeExtrinsic (value: ExtrinsicValue | AnyU8a | Method): [any, ExtrinsicValue | Array<number> | Uint8Array] {
+    let defWithDoughnut = {
+      signature: ExtrinsicSignature,
+      doughnut: Doughnut,
+      method: Method
+    };
+    let defWithoutDoughnut = {
+      signature: ExtrinsicSignature,
+      method: Method
+    };
+
     if (Array.isArray(value) || isHex(value)) {
       // Instead of the block below, it should simply be:
       // return Extrinsic.decodeExtrinsic(hexToU8a(value as string));
@@ -63,14 +69,20 @@ export default class Extrinsic extends Struct implements IExtrinsic {
     } else if (isU8a(value)) {
       const [offset, length] = Compact.decodeU8a(value);
 
-      return value.subarray(offset, offset + length.toNumber());
+      let arr = value.subarray(offset, offset + length.toNumber());
+      let withDoughnut = arr[0] | 0b01000000;
+      if (withDoughnut) {
+        return [defWithDoughnut, arr];
+      } else {
+        return [defWithoutDoughnut, arr];
+      }
     } else if (value instanceof Method) {
-      return {
+      return [defWithDoughnut, {
         method: value
-      };
+      }];
     }
 
-    return value;
+    return [defWithDoughnut, value];
   }
 
   /**
