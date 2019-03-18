@@ -5,7 +5,7 @@
 import { KeyringPair } from '@polkadot/keyring/types';
 import { AnyNumber, AnyU8a } from '../types';
 
-import {Option} from '../index';
+import { Option } from '../index';
 import { blake2AsU8a } from '@polkadot/util-crypto';
 
 import Struct from '../codec/Struct';
@@ -15,13 +15,14 @@ import Method from '../primitive/Method';
 import Nonce from './NonceCompact';
 import RuntimeVersion from '../rpc/RuntimeVersion';
 import { Doughnut } from './Doughnut';
+import { u8aConcat } from '@polkadot/util';
 
 type SignaturePayloadValue = {
   nonce?: AnyNumber,
   method?: Method,
   era?: AnyU8a | ExtrinsicEra
   blockHash?: AnyU8a,
-  doughnut?: Doughnut
+  doughnut?: Option<Doughnut>
 };
 
 /**
@@ -44,7 +45,7 @@ export default class SignaturePayload extends Struct {
       method: Method,
       era: ExtrinsicEra,
       blockHash: Hash,
-      doughnut: Option.with(Doughnut),
+      doughnut: Option.with(Doughnut)
     }, value);
   }
 
@@ -92,6 +93,24 @@ export default class SignaturePayload extends Struct {
     }
 
     return this._signature as Uint8Array;
+  }
+
+  get doughnut(): Option<Doughnut> {
+    return this.get('doughnut') as Option<Doughnut>;
+  }
+
+  toU8a (isBare?: boolean): Uint8Array {
+    let values = this.toArray();
+    if (this.doughnut.isSome) {
+      values[values.length - 1] = this.doughnut.unwrap();
+    } else {
+      values.pop();
+    }
+    return u8aConcat(
+      ...values.map((entry) =>
+        entry.toU8a(isBare)
+      )
+    );
   }
 
   /**

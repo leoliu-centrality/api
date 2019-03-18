@@ -15,7 +15,7 @@ import Nonce from './NonceCompact';
 import RuntimeVersion from '../rpc/RuntimeVersion';
 import Signature from './Signature';
 import SignaturePayload from './SignaturePayload';
-import { Doughnut } from './Doughnut';
+import { Doughnut, OptionDoughnut } from './Doughnut';
 
 export const IMMORTAL_ERA = new Uint8Array([0]);
 
@@ -119,12 +119,13 @@ export default class ExtrinsicSignature extends Struct implements IExtrinsicSign
     return (this.get('version') as U8).toNumber();
   }
 
-  private injectSignature (signature: Signature, signer: Address, nonce: Nonce, era: ExtrinsicEra): ExtrinsicSignature {
+  private injectSignature (signature: Signature, signer: Address, nonce: Nonce, era: ExtrinsicEra, doughnut: Option<Doughnut>): ExtrinsicSignature {
     this.set('era', era);
     this.set('nonce', nonce);
     this.set('signer', signer);
     this.set('signature', signature);
     this.set('version', new U8(BIT_VERSION | BIT_SIGNED | BIT_DOUGHNUT));
+    this.set('doughnut', doughnut);
 
     return this;
   }
@@ -132,13 +133,14 @@ export default class ExtrinsicSignature extends Struct implements IExtrinsicSign
   /**
    * @description Adds a raw signature
    */
-  addSignature (_signer: Address | Uint8Array, _signature: Uint8Array, _nonce: AnyNumber, _era: Uint8Array = IMMORTAL_ERA): ExtrinsicSignature {
+  addSignature (_signer: Address | Uint8Array, _signature: Uint8Array, _nonce: AnyNumber, _era: Uint8Array = IMMORTAL_ERA, _doughnut: Option<Doughnut> = new OptionDoughnut()): ExtrinsicSignature {
     const signer = new Address(_signer);
     const nonce = new Nonce(_nonce);
     const era = new ExtrinsicEra(_era);
     const signature = new Signature(_signature);
+    const doughnut = new OptionDoughnut(_doughnut);
 
-    return this.injectSignature(signature, signer, nonce, era);
+    return this.injectSignature(signature, signer, nonce, era, doughnut);
   }
 
   /**
@@ -151,11 +153,11 @@ export default class ExtrinsicSignature extends Struct implements IExtrinsicSign
       method,
       era: era || IMMORTAL_ERA,
       blockHash,
-      doughnut
+      doughnut: doughnut || new OptionDoughnut()
     });
     const signature = new Signature(signingPayload.sign(account, version as RuntimeVersion));
 
-    return this.injectSignature(signature, signer, signingPayload.nonce, signingPayload.era);
+    return this.injectSignature(signature, signer, signingPayload.nonce, signingPayload.era, signingPayload.doughnut);
   }
 
   /**

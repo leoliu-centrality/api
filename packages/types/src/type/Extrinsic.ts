@@ -164,8 +164,8 @@ export default class Extrinsic extends Struct implements IExtrinsic {
   /**
    * @description Add an [[ExtrinsicSignature]] to the extrinsic (already generated)
    */
-  addSignature (signer: Address | Uint8Array, signature: Uint8Array, nonce: AnyNumber, era?: Uint8Array): Extrinsic {
-    this.signature.addSignature(signer, signature, nonce, era);
+  addSignature (signer: Address | Uint8Array, signature: Uint8Array, nonce: AnyNumber, era?: Uint8Array, doughnut?: Option<Doughnut>): Extrinsic {
+    this.signature.addSignature(signer, signature, nonce, era, doughnut);
 
     return this;
   }

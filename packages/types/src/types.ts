@@ -9,6 +9,7 @@ import Method from './primitive/Method';
 import Address from './type/Address';
 import { FunctionMetadata } from './Metadata/v0/Modules';
 import { Doughnut } from './type/Doughnut';
+import { Option } from './codec';
 
 export type CodecArg = Codec | BN | Boolean | String | Uint8Array | boolean | number | string | undefined | CodecArgArray | CodecArgObject;
 
@@ -99,7 +100,7 @@ export type SignatureOptions = {
   era?: Uint8Array,
   nonce: AnyNumber,
   version?: RuntimeVersionInterface,
-  doughnut?: Doughnut
+  doughnut?: Option<Doughnut>
 };
 
 export interface ArgsDef {
